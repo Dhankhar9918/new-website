@@ -1,26 +1,101 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Application Card</title>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #d4fc79, #96e6a1, #84fab0);
+            padding: 20px;
         }
 
         .card {
-            background-color: lightgreen;
-            padding: 25px;
-            width: 300px;
+            width: 100%;
+            max-width: 380px;
+            padding: 40px 30px;
             text-align: center;
-            border-radius: 10px;
-            font-family: Arial, sans-serif;
-            box-shadow: 0 4px 8px #ccc;
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(20, 83, 45, 0.18);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 28px 60px rgba(20, 83, 45, 0.25);
+        }
+
+        .icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #16a34a, #065f46);
+            border-radius: 50%;
+            font-size: 42px;
+            box-shadow: 0 10px 25px rgba(22, 163, 74, 0.3);
+        }
+
+        h2 {
+            color: #14532d;
+            font-size: 30px;
+            margin-bottom: 14px;
+        }
+
+        .name {
+            color: #15803d;
+            font-size: 21px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .message {
+            color: #64748b;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 26px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 30px;
+            background: linear-gradient(135deg, #16a34a, #047857);
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 30px;
+            box-shadow: 0 6px 15px rgba(22, 163, 74, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background: linear-gradient(135deg, #15803d, #064e3b);
+            transform: scale(1.05);
+        }
+
+        .footer {
+            margin-top: 28px;
+            color: #94a3b8;
+            font-size: 12px;
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -28,9 +103,25 @@
 <body>
 
     <div class="card">
+
+        <div class="icon">👋</div>
+
         <h2>Hi All!</h2>
-        <p>My name is Dheeraj.</p>
-        <p>Welcome to my application.</p>
+
+        <p class="name">I'm Dheeraj</p>
+
+        <p class="message">
+            Welcome to my application!<br>
+            I'm glad you're here. Explore and enjoy!
+        </p>
+
+        <a href="javascript:void(0)" class="button"
+           onclick="alert('Welcome to my application!')">
+            Get Started →
+        </a>
+
+        <p class="footer">✨ THANKS FOR VISITING ✨</p>
+
     </div>
 
 </body>
