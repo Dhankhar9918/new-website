@@ -30,12 +30,12 @@ jobs:
       # 4. Add tag to image
       - name: Tag Docker Image
         run: |
-          docker tag my-name_website:latest dhankhar9918/my_name_website:v1
+          docker tag my-name_website:latest dhankhar9918/new-web:kamlesh
 
       # 5. Push image Docker Hub
       - name: Push Docker Image
         run: |
-          docker push dhankhar9918/my_name_website:v1
+          docker push dhankhar9918/new-web:kamlesh
           
       # 6. deploy to docker container
       - name: Deploy to EC2
@@ -45,7 +45,7 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/my_name_website:v1
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/new-web:kamlesh
 
             docker stop mycont || true
 
@@ -54,4 +54,4 @@ jobs:
             docker run -d \
               --name mycont \
               -p 8080:80 \
-              ${{ secrets.DOCKERHUB_USERNAME }}/my_name_website:v1
+              ${{ secrets.DOCKERHUB_USERNAME }}/new-web:kamlesh
